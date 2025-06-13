@@ -1,0 +1,16 @@
+version: '3'
+services:
+  web:
+    build: ./docker
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+    command: npm start
+  server:
+    build: ./docker
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/app
+    command: node server/index.js
